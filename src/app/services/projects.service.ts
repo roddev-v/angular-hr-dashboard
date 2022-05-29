@@ -6,11 +6,11 @@ import { lastValueFrom } from 'rxjs';
 export class ProjectsService {
   constructor(private readonly firestore: AngularFirestore) {}
 
-  public async getProjects() {
+  public async getProjects(): Promise<any[]> {
     const documents = await lastValueFrom(
       this.firestore.collection('projects').get()
     );
-    const projects = [];
+    const projects: any[] = [];
     documents.forEach((doc) => projects.push(doc.data()));
     return projects;
   }

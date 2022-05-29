@@ -28,6 +28,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { FreeDaysRequestFormComponent } from './components/free-days-request-form/free-days-request-form.component';
+import { TimesheetsFormComponent } from './components/timesheets-form/timesheets-form.component';
+import { TimesheetsTableComponent } from './components/timesheets-table/timesheets-table.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { FreeDaysRequestFormComponent } from './components/free-days-request-for
     HomeComponent,
     ManageComponent,
     FreeDaysRequestFormComponent,
+    TimesheetsFormComponent,
+    TimesheetsTableComponent,
   ],
   imports: [
     BrowserModule,
