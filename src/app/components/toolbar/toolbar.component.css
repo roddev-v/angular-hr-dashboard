@@ -1,0 +1,13 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.link {
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 12px;
+}
+
+.link:hover {
+  cursor: pointer;
+}

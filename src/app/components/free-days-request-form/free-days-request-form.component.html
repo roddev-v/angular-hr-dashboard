@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>Request a vacation day</mat-card-title>
+  <mat-card-subtitle
+    >Keep in mind that a request may be declined</mat-card-subtitle
+  >
+  <mat-card-content>
+    <mat-form-field appearance="fill">
+      <mat-label>First campaign</mat-label>
+      <mat-date-range-input
+        [formGroup]="campaignOne"
+        [rangePicker]="campaignOnePicker"
+      >
+        <input matStartDate placeholder="Start date" formControlName="start" />
+        <input matEndDate placeholder="End date" formControlName="end" />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="campaignOnePicker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <mat-select [formControl]="selectedAdmin">
+        <mat-option *ngFor="let user of adminUsers" [value]="user.fullName">
+          {{ user.fullName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button (click)="submitRequest()" mat-button>Submit request</button>
+  </mat-card-content>
+</mat-card>

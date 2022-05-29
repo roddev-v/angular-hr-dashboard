@@ -1,0 +1,14 @@
+<div style="margin: 10px">
+  <mat-card>
+    <mat-card-title>Free days overview</mat-card-title>
+    <mat-card-subtitle>For additional info please contact HR</mat-card-subtitle>
+    <mat-card-content>
+      <mat-progress-bar
+        [value]="user?.usedFreeDays"
+        [bufferValue]="user?.freeDays!"
+      ></mat-progress-bar>
+      <br>
+      <span>Used: {{ user?.usedFreeDays }} / {{ user?.freeDays }} days</span>
+    </mat-card-content>
+  </mat-card>
+</div>

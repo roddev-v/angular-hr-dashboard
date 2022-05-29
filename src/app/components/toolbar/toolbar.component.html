@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>HR Dashboard</span>
+      <span class="link" [routerLink]="'/home'">Home</span>
+      <span *ngIf="user?.isAdmin" class="link" [routerLink]="'/manage'">Manage</span>
+      <span class="spacer"></span>
+      <button (click)="logout()" mat-icon-button>Logout</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
