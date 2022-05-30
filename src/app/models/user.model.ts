@@ -10,13 +10,6 @@ export class UserModel {
   workingHours?: number;
   email?: string;
 
-  @Transform((data: any) => {
-    return new Date(
-      typeof data.value === 'string' ? data.value : data.value.seconds * 1000
-    );
-  })
-  startDate?: Date;
-
   get fullName(): string {
     return `${this.firstName} ${this.lastName}`;
   }

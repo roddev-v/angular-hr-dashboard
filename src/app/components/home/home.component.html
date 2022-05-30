@@ -2,19 +2,22 @@
   <div [fxFlex.xs]="100" [fxFlex.gt-xs]="50">
     <app-free-days-overview></app-free-days-overview>
   </div>
-  <div [fxFlex.xs]="100" [fxFlex.gt-xs]="50">
+</div>
+
+<div fxLayout="row" fxLayoutAlign="start center">
+  <div [fxFlex.xs]="50" [fxFlex.gt-xs]="50">
     <app-free-days-request-form></app-free-days-request-form>
   </div>
 </div>
 
 <div fxLayout="row" fxLayoutAlign="start center">
-  <div [fxFlex]="100" style="margin: 10px;">
+  <div [fxFlex]="50" style="margin: 10px;">
     <app-timesheets-form></app-timesheets-form>
   </div>
 </div>
 
 <div fxLayout="row" fxLayoutAlign="start center">
-  <div [fxFlex]="100">
+  <div [fxFlex]="50">
     <app-timesheets-table></app-timesheets-table>
   </div>
 </div>
