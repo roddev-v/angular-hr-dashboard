@@ -21,18 +21,14 @@ export class FreeDaysRequestFormComponent implements OnInit {
     private readonly identity: IdentityService,
     private readonly freeDaysService: FreeDaysService
   ) {
-    const today = new Date();
-    const month = today.getMonth();
-    const year = today.getFullYear();
-
     this.campaignOne = new FormGroup({
-      start: new FormControl(new Date(year, month, 13)),
-      end: new FormControl(new Date(year, month, 16)),
+      start: new FormControl(),
+      end: new FormControl(),
     });
 
     this.campaignTwo = new FormGroup({
-      start: new FormControl(new Date(year, month, 15)),
-      end: new FormControl(new Date(year, month, 19)),
+      start: new FormControl(),
+      end: new FormControl(),
     });
   }
 
@@ -42,6 +38,8 @@ export class FreeDaysRequestFormComponent implements OnInit {
 
   public async submitRequest(): Promise<void> {
     const request = new VacationRequestModel();
+    const user = this.identity.getUser();
+    request.email = user.email;
     request.assignedTo = this.selectedAdmin.value;
     request.periodStart = (this.campaignOne.value.start as Date).toISOString();
     request.periodEnd = (this.campaignOne.value.end as Date).toISOString();
